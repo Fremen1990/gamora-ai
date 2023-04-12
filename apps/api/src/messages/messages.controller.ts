@@ -16,6 +16,17 @@ export class MessagesController {
   async createMessage(@Body() data: { message: string }) {
     const {id, created} = await this.messagesService.createMessage(data.message);
 
-    return this.openaiService.createCompletion(data.message, "")
+    const embed = await this.openaiService.createEmbedding(data.message);
+    const matches = await this.pineconeService.query(embed.data[0].embedding);
+    const context = await this.messagesService.getContext(matches);
+
+    if (created) {
+      this.pineconeService.upsert({
+        id: id.toString(),
+        values: embed.data[0].embedding
+      })
+    }
+
+    return this.openaiService.createCompletion(data.message, context)
   }
 }

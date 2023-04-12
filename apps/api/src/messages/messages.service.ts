@@ -28,6 +28,27 @@ export class MessagesService {
     }
   }
 
+  async messages(ids: number[]) {
+    return this.prisma.message.findMany({
+      where: {
+        id: {
+          in: ids,
+        },
+      },
+    });
+  }
+
+  async getContext(matches) {
+    return (await this.messages(matches))
+      .filter(
+        (message, index, self) =>
+          index === self.findIndex((t) => t.message === message.message),
+      )
+      .reduce((acc, message) => {
+        return acc + message.message + '\n';
+      }, '');
+  }
+
   private async checkIfMessageExists(message) {
     return await this.prisma.message.findFirst({
       where: {
