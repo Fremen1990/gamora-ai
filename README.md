@@ -56,5 +56,6 @@ Run `nx graph` to see a diagram of the dependencies of the projects.
 
 
 ## Further help
+https://medium.com/@overment/sarcastic-gpt-3-chatbot-who-can-remember-anything-built-in-node-js-openai-api-a84d64d5febc
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
