@@ -16,6 +16,6 @@ export class MessagesController {
   async createMessage(@Body() data: { message: string }) {
     const {id, created} = await this.messagesService.createMessage(data.message);
 
-    return id;
+    return this.openaiService.createCompletion(data.message, "")
   }
 }
