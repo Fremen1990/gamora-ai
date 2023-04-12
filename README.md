@@ -24,15 +24,20 @@ Commands snippets:
 - `nx format:check` - Check if the code in your workspace is formatted
 
 Programming snippets:
-- `nx generate @nrwl/nest:application` - Generate a nest application
-- `nx generate @nrwl/nest:lib` - Generate a nest library
-- `nx generate @nrwl/nest:controller` - Generate a nest controller
+
+NestJS:
+- `nx generate @nrwl/nest:module` - Generate a nest module
 - `nx generate @nrwl/nest:service` - Generate a nest service
+- `nx generate @nrwl/nest:controller` - Generate a nest controller
 - `nx generate @nrwl/nest:middleware` - Generate a nest middleware
 - `nx generate @nrwl/nest:filter` - Generate a nest filter
 - `nx generate @nrwl/nest:guard` - Generate a nest guard
 - `nx generate @nrwl/nest:interceptor` - Generate a nest interceptor
 - `nx generate @nrwl/nest:decorator` - Generate a nest decorator
+- `nx generate @nrwl/nest:lib` - Generate a nest library
+- `nx generate @nrwl/nest:application` - Generate a nest application
+
+React:
 - `nx generatge @nrwl/react:application` - Generate a react application
 - `nx generate @nrwl/react:component` - Generate a react component
 
@@ -41,9 +46,14 @@ Programming snippets:
 
 Run `nx graph` to see a diagram of the dependencies of the projects.
 
-## Remote caching
+## Tech Stack:
 
-Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and make CI faster.
+- ### Node (NestJS)
+- ### Typescript
+- ### PostgresSQL (Prisma)
+- ### OpenAI API
+- ### Pinecone (Vector Database)
+
 
 ## Further help
 
