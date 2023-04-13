@@ -30,7 +30,8 @@ jobs:
           sha: ${{ github.sha }}
 
       - name: Install pnpm
-        run: curl -L https://unpkg.com/@pnpm/self-installer | node
+#        run: curl -L https://unpkg.com/@pnpm/self-installer | node
+        run: npm install -g pnpm@7.28.0
 
       - name: Install dependencies
         run: pnpm install
