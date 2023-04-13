@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
       - develop
       - web
       - web/feature/*
@@ -11,7 +11,7 @@ on:
       - api/feature/*
   pull_request:
     branches:
-      - master
+      - main
       - develop
       - web
       - web/feature/*
