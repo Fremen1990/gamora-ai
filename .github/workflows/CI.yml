@@ -36,7 +36,7 @@ jobs:
         run: pnpm install
 
       - name: Format
-        run: pnpm format:check:api
+        run: pnpm format:check
 
       - name: Lint
         run: pnpx nx affected --target=lint --parallel=3
@@ -44,9 +44,8 @@ jobs:
       - name: Unit Tests
         run: pnpx nx affected --target=test --parallel=3 --configuration=ci
 
-# TODO to be implemented with React and Cypress
-#      - name: E2E Tests
-#        run: pnpx nx affected --target=e2e --parallel=3 --configuration=ci
+      - name: E2E Tests
+        run: pnpx nx affected --target=e2e --parallel=3 --configuration=ci
 
       - name: Build
         run: pnpx nx affected --target=build --parallel=3
