@@ -36,7 +36,9 @@ describe('PineconeService', () => {
       const vectors = [1, 2, 3];
       const pineconeVectors: PineconeVectors = { '0': vectors };
       pineconeService.upsert(vectors);
-      expect(pineconeClient.upsert).toHaveBeenCalledWith({ vectors: [vectors] });
+      expect(pineconeClient.upsert).toHaveBeenCalledWith({
+        vectors: [vectors],
+      });
     });
   });
 
