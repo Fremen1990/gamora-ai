@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "dev:api": "nx serve api",
+    "lint-staged": "lint-staged",
     "lint:api": "nx lint api",
-    "format:api": "prettier --write apps/api/**/*.{js,jsx,ts,tsx,md,json}",
-    "format:check:api": "prettier --check apps/api/**/*.{js,jsx,ts,tsx,md,json}",
+    "format:api": "prettier --write apps/api/**/*.{js,jsx,ts,tsx}",
+    "format:check:api": "prettier --check apps/api/**/*.{js,jsx,ts,tsx}",
     "test:api": "nx test web",
     "test:watch:api": "nx test api --watch",
     "test:coverage:api": "nx test api --coverage",
@@ -57,12 +58,6 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0"
-  },
-
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,json}": [
