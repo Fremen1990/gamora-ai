@@ -24,6 +24,9 @@ export class OpenaiService {
 
   async createCompletion(prompt, context) {
     const completion = await this.openai.createCompletion({
+      // setup endpoint to chose from which model to use
+      // model: 'gpt-3.5-turbo', // not working
+      // model: 'gpt-4', // to get API and implement
       model: 'text-davinci-003',
       prompt: `${this.CONTEXT_INSTRUCTION}\n\n\nContext: "${context}" \n\n\n${this.INSTRUCTION} \n\n\n ${prompt}`,
       max_tokens: 250,
