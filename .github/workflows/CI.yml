@@ -29,8 +29,14 @@ jobs:
         with:
           sha: ${{ github.sha }}
 
+      - name: Install pnpm
+        run: curl -f https://get.pnpm.io/v6.7.js | node - add --global pnpm
+
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
+
+#      - name: Install dependencies
+#        run: npm ci
 
       - name: Format
         run: npx nx format:check
