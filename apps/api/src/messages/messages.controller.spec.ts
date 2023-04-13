@@ -1,8 +1,8 @@
-import {Test, TestingModule} from '@nestjs/testing';
-import {MessagesController} from './messages.controller';
-import {MessagesService} from './messages.service';
-import {OpenaiService} from './openai/openai.service';
-import {PineconeService} from './pinecone/pinecone.service';
+import { Test, TestingModule } from '@nestjs/testing';
+import { MessagesController } from './messages.controller';
+import { MessagesService } from './messages.service';
+import { OpenaiService } from './openai/openai.service';
+import { PineconeService } from './pinecone/pinecone.service';
 
 describe('MessagesController', () => {
   let controller: MessagesController;
@@ -49,8 +49,8 @@ describe('MessagesController', () => {
   });
 
   describe('createMessage', () => {
-    const testMessage = {message: 'test message'};
-    const testEmbedding = {data: [{embedding: 'testEmbedding'}]};
+    const testMessage = { message: 'test message' };
+    const testEmbedding = { data: [{ embedding: 'testEmbedding' }] };
     const testMatches = ['match1', 'match2'];
     const testContext = 'test context';
 
@@ -58,9 +58,11 @@ describe('MessagesController', () => {
       jest.spyOn(messagesService, 'createMessage').mockResolvedValue({
         id: 1,
         created: true,
-        message: testMessage.message
+        message: testMessage.message,
       });
-      jest.spyOn(openaiService, 'createEmbedding').mockResolvedValue(testEmbedding);
+      jest
+        .spyOn(openaiService, 'createEmbedding')
+        .mockResolvedValue(testEmbedding);
       jest.spyOn(pineconeService, 'query').mockResolvedValue(testMatches);
       jest.spyOn(messagesService, 'getContext').mockResolvedValue(testContext);
     });
@@ -68,9 +70,15 @@ describe('MessagesController', () => {
     it('should call services with the correct parameters', async () => {
       await controller.createMessage(testMessage);
 
-      expect(messagesService.createMessage).toHaveBeenCalledWith(testMessage.message);
-      expect(openaiService.createEmbedding).toHaveBeenCalledWith(testMessage.message);
-      expect(pineconeService.query).toHaveBeenCalledWith(testEmbedding.data[0].embedding);
+      expect(messagesService.createMessage).toHaveBeenCalledWith(
+        testMessage.message
+      );
+      expect(openaiService.createEmbedding).toHaveBeenCalledWith(
+        testMessage.message
+      );
+      expect(pineconeService.query).toHaveBeenCalledWith(
+        testEmbedding.data[0].embedding
+      );
       expect(messagesService.getContext).toHaveBeenCalledWith(testMatches);
     });
 
@@ -87,8 +95,8 @@ describe('MessagesController', () => {
       jest.spyOn(messagesService, 'createMessage').mockResolvedValue({
         id: 1,
         created: false,
-        message: testMessage.message
+        message: testMessage.message,
       });
-    })
-  })
+    });
+  });
 });

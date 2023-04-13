@@ -2,7 +2,19 @@
   "name": "gamora-ai",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev:api": "nx serve api",
+    "lint:api": "nx lint api",
+    "format:api": "prettier --write apps/api/**/*.{js,jsx,ts,tsx,md,json}",
+    "format:check:api": "prettier --check apps/api/**/*.{js,jsx,ts,tsx,md,json}",
+    "test:api": "nx test web",
+    "test:watch:api": "nx test api --watch",
+    "test:coverage:api": "nx test api --coverage",
+    "e2e": "nx e2e web-e2e",
+    "e2e:watch": "nx e2e web-e2e --watch",
+    "affected:apps": "nx affected:apps",
+    "build": "nx build api"
+  },
   "private": true,
   "devDependencies": {
     "@nestjs/schematics": "^9.0.0",
