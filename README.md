@@ -48,12 +48,18 @@ Run `nx graph` to see a diagram of the dependencies of the projects.
 
 ## Tech Stack:
 
+### Api:
 - ### Node (NestJS)
 - ### Typescript
 - ### PostgresSQL (Prisma)
 - ### OpenAI API
 - ### Pinecone (Vector Database)
 
+### Web & Electron:
+- ### React (https://reactjs.org/)
+- ### Typescript (https://www.typescriptlang.org/)
+- ### Ant Design (https://ant.design/)
+- ### Electron (https://www.electronjs.org/)
 
 ## Further help
 https://medium.com/@overment/sarcastic-gpt-3-chatbot-who-can-remember-anything-built-in-node-js-openai-api-a84d64d5febc
