@@ -45,7 +45,7 @@ jobs:
         run: pnpx nx affected --target=test --parallel=3 --configuration=ci
 
       - name: E2E Tests
-        run: pnpx nx affected --target=e2e --parallel=3 --configuration=ci
+        run: pnpx nx affected --target=e2e --parallel=3
 
       - name: Build
         run: pnpx nx affected --target=build --parallel=3
