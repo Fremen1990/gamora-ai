@@ -3,10 +3,8 @@ import { Configuration, OpenAIApi } from 'openai';
 
 @Injectable()
 export class OpenaiService {
-  // private CONTEXT_INSTRUCTION = 'Based on this context:';
   private CONTEXT_INSTRUCTION = 'Based on this context:';
-  // private INSTRUCTION = `As an expert in the fields of programming in JavaScript, TypeScript, React, React Query, StyledComponent and MaterialUI answer the questions below.`;
-  private INSTRUCTION = `Answer the question below as truthfully as you can, if you don't know the answer, say you don't know in a sarcastic way otherwise, just answer.`;
+  private INSTRUCTION = `As an expert in the fields of programming in JavaScript, TypeScript, React, React Query, StyledComponent and MaterialUI answer the questions below.`;
   private openai;
   constructor() {
     const configuration = new Configuration({
